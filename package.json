@@ -1,0 +1,29 @@
+{
+  "name": "localnetproxyrouter",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun --watch run index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@types/body-parser": "^1.19.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "body-parser": "^2.2.1",
+    "cap": "^0.2.1",
+    "chokidar": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "http-proxy": "^1.18.1",
+    "mongoose": "^9.0.1",
+    "pcap": "^3.1.0",
+    "ws": "^8.18.3"
+  }
+}

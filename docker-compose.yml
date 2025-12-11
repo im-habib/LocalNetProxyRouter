@@ -1,0 +1,28 @@
+services:
+  localnetproxy:
+    build: .
+    container_name: localnetproxy
+    # network_mode: "host"  # optional on macOS, usually rely on ports mapping
+    ports:
+      - "8500:8500"
+      - "9000:9000"
+    volumes:
+      - .:/app
+    environment:
+      - API_PORT=8500
+      - PROXY_PORT=9000
+      - SUBNET_PREFIX=192.168.0
+      - MONGO_URI=mongodb://mongo:27017/LocalNetProxyDB
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7
+    container_name: localnetmongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
